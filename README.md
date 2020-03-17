@@ -110,3 +110,65 @@ El valor inicial del objeto Boolean. El valor es convertido a un valor boolean, 
 No se deben confundir los valores primitivos booleanos true y false con los valores true y false del objeto Boolean.
 
 Cualquier objeto cuyo valor no sea undefined o null, incluyendo un objeto Boolean cuyo valor sea false, se evalua como true cuando se pasa a una sentencia condicional. Por ejemplo, la condición de la siguiente sentencia se evalúa como true:
+
+
+/////////////////////////////////////////////////////CONDITIONALS ////////////////////////////////////////////////////////////
+
+If
+En un programa podemos realizar el mismo tipo de decisiones gracias a la instrucción if:
+
+	if (condición) {
+	   código_A
+	}
+	else {
+	   código_B
+	}
+Veamos lo que tenemos aquí. Primero, comprobamos la condición en la que vamos a basar nuestra decisión (veremos más adelante cómo crear condiciones). Si la condición es válida (si es verdadera), se ejecutará el primer bloque de código que está entre llaves ({}); si no, se ejecutará el siguiente bloque de código, el que se encuentra debajo de la palabra else. Es decir, si la condición es verdadera, ejecutamos código_A, y si no, código_B.
+
+De esta forma, podemos tomar decisiones simples que nos permiten cambiar el código que ejecuta el navegador, de forma que podemos controlar su ejecución fácilmente. Un ejemplo es este:
+
+	var edad = 18;
+	if (edad >= 18) {
+	   alert("Eres mayor de edad");
+	}
+	else {
+	   alert("Eres menor de edad");
+	}
+Primero definimos la variable edad con el valor numérico 18. Después comprobamos si el sujeto es o no mayor de edad leyendo el valor de la variable: si edad es mayor o igual que 18, entonces le decimos que es mayor de edad; si no, le decimos que es menor de edad.
+
+alert es una función de Javascript que nos permite mostrar un mensaje en pantalla.
+
+Pero, ¿qué ocurre cuando queremos hacer varias comprobaciones al mismo tiempo? Entonces podemos usar la instrucción else if.
+
+	if (edad > 18) {
+	   alert("Tienes más de 18 años");
+	}
+	else if (edad == 18) {
+	   alert("Tienes 18 años");
+	}
+	else {
+	   alert("Tienes menos de 18 años");
+	}
+De esta forma, podemos extender las condiciones todo lo que queramos para cubrir todos los casos necesarios. Hay que destacar que todas las condiciones son sucesivas y que sólo se ejecuta una de ellas. Además, el último else es el que se ejecuta en el caso de que ninguno de los if anteriores sea válido.
+
+Switch
+Hemos visto cómo gracias a if-else podemos decidir qué hacer en determinadas situaciones. Pero a veces sólo querremos decidir entre unos valores, y ejecutar código dependiendo de los posibles valores de una variable o devueltos por una función. Para no ensuciar tanto el codigo usando muchas sentencias if podemos usar la sentencia switch-case:
+
+	switch (variable) {
+	   case valor1:
+	      // codigo para valor 1
+	      break;
+	   case valor2:
+	      // codigo para valor 2
+	      break;
+	   case valor3:
+	   case valor4:
+	   case valor5:
+	      // codigo para valor 3, valor 4 y valor 5
+	      break;
+	   default:
+	      // código si no es ninguno de los anteriores
+	}
+En este ejemplo, comprobamos varios valores de la variable variable, de forma que cada uno de ellos permite ejecutar un código diferente dependiendo de la situación. Ahora bien, si nos fijamos en valor3, valor4 y valor5, comprobamos que sólo se ejecutará el código que aparece bajo valor5, porque los otros valores están vacíos, pero también porque no tienen una cláusula break. Esta palabra reservada corta la ejecución del código Javascript en el punto en que aparece, saliendo del bloque de código en el que se encuentra. Esto también nos servirá, por ejemplo, cuando veamos bucles.
+
+Con esto, comprobamos que switch nos puede ayudar a ejecutar código de forma condicional, pero sin las complicadas operaciones que debemos realizar en if. Sin embargo, switch no puede nunca sustituir a if, situación que a la inversa sí ocurre.
