@@ -1,6 +1,6 @@
 //FUNCIONES DECLARATIVAS: inicia un valor en memoria que guarda en este caso return 3;
 function mifuncion() { // esta funcion NO ES ANONIMA porque si le estoy generando un nombre
-    return 3:
+    return 3;
     }
     miFuncion();
 
@@ -27,7 +27,7 @@ function mifuncion() { // esta funcion NO ES ANONIMA porque si le estoy generand
 
     function sumar(a,b){
         var resultado = a + b;
-        return resultado; //con este return devolbbemos el resultado
+        return resultado; //con este return devolbemos el resultado
     }
     sumar(1,2) //aca invocamos la variable con los parametros que le estamos dando
 
